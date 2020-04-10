@@ -925,8 +925,16 @@ channel_do_join(struct Client *client, char *chan_list, char *key_list)
       int ret = can_join(client, channel, key);
       if (ret)
       {
-        sendto_one_numeric(client, &me, ret, channel->name);
-        continue;
+        if(!HasUMode(client,UMODE_OPER)) {
+          sendto_one_numeric(client, &me, ret, channel->name);
+          continue;
+        }
+        else {
+          sendto_realops_flags(UMODE_OPER, L_ALL, SEND_NOTICE,
+                               "OPER JOIN by %s on %s target: %s",
+                               client_get_name(client, HIDE_IP),
+                               client->servptr->name, channel->name);
+        }
       }
 
       /*
