@@ -427,6 +427,8 @@ register_local_user(struct Client *client)
   if (ConfigGeneral.invisible_on_connect)
   {
     AddUMode(client, UMODE_INVISIBLE);
+    AddUMode(client, UMODE_SOFTCALLERID);
+    AddUMode(client, UMODE_WALLOP);
     ++Count.invisi;
   }
 
