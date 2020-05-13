@@ -976,11 +976,21 @@ channel_mode_set(struct Client *client, struct Channel *channel,
   if(alevel == CHACCESS_PEON && HasUMode(client, UMODE_OPER)) {
     alevel = CHACCESS_CHANOP;
     sendto_realops_flags(UMODE_OPER, L_ALL, SEND_NOTICE,
-                         "OPER MODE by %s on %s target: %s",
+                         "OPER MODE (no-op) by %s on %s target: %s",
                           client_get_name(client, HIDE_IP),
                           client->servptr->name, channel->name);
 
   }
+
+  if(alevel == CHACCESS_HALFOP && HasUMode(client, UMODE_OPER)) {
+    alevel = CHACCESS_CHANOP;
+    sendto_realops_flags(UMODE_OPER, L_ALL, SEND_NOTICE,
+                         "OPER MODE by (halfop) %s on %s target: %s",
+                          client_get_name(client, HIDE_IP),
+                          client->servptr->name, channel->name);
+
+  }
+
 
   for (const char *ml = parv[0]; *ml; ++ml)
   {
