@@ -5,7 +5,7 @@
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
 
 /* Set to datadir. */
-#define DATADIR "/home/ircd/ircd2/share"
+#define DATADIR "/home/ircd/ircd/share"
 
 /* Define if SSP C support is enabled. */
 #define ENABLE_SSP_CC 1
@@ -165,10 +165,10 @@
 #define HAVE_WORKING_ARGZ 1
 
 /* Set to libdir. */
-#define LIBDIR "/home/ircd/ircd2/lib"
+#define LIBDIR "/home/ircd/ircd/lib"
 
 /* Set to localstatedir. */
-#define LOCALSTATEDIR "/home/ircd/ircd2/var"
+#define LOCALSTATEDIR "/home/ircd/ircd/var"
 
 /* Define if the OS needs help to load dependent libraries for dlopen(). */
 /* #undef LTDL_DLOPEN_DEPLIBS */
@@ -226,13 +226,13 @@
 #define PACKAGE_VERSION "TRUNK"
 
 /* Set to prefix. */
-#define PREFIX "/home/ircd/ircd2"
+#define PREFIX "/home/ircd/ircd"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
 
 /* Set to sysconfdir. */
-#define SYSCONFDIR "/home/ircd/ircd2/etc"
+#define SYSCONFDIR "/home/ircd/ircd/etc"
 
 /* use this iopoll mechanism */
 #define USE_IOPOLL_MECHANISM 2
